@@ -10,7 +10,7 @@ import {connectDB} from "./lib/db.js";
 import {clerkMiddleware} from '@clerk/express';
 import {protectRoute} from "./middleware/protectRoute.js";
 import chatRoutes from "./routes/chatRoutes.js";
-
+import sessionRoutes from "./routes/sessionRoutes.js";
 const app = express()     //initialise app
 
 const __dirname = path.resolve(); //to get current directory path
@@ -33,7 +33,7 @@ app.get("/health",(req,res)=>{
 })
 
 app.use("/api/chat",chatRoutes);
-
+app.use("/api/sessions",sessionRoutes);
 
 
 //make our app ready for deployment
