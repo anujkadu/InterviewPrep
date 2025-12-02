@@ -6,6 +6,7 @@ import cors from "cors";
 import {ENV} from "./lib/env.js"; //configure dotenv
 import {serve} from "inngest/express";
 import {inngest,functions} from "./lib/inngest.js";
+import {connectDB} from "./lib/db.js";
 const app = express()     //initialise app
 
 const __dirname = path.resolve(); //to get current directory path
