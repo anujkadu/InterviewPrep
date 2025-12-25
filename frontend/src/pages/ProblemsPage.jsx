@@ -3,7 +3,8 @@ import Navbar from '../components/Navbar'
 import { Link } from 'react-router'
 import { PROBLEMS } from '../data/problems'
 import { ChevronRightIcon, Code2Icon } from 'lucide-react'
-import {getDifficultyBadgeClass} from '../../../backend/src/lib/utils'
+import {getDifficultyBadgeClass} from '../lib/utils'
+import ProblemPage from './ProblemPage'
 function ProblemsPage() {
   const problems = Object.values(PROBLEMS);
   const easyProblemsCount = problems.filter(p => p.difficulty.toLowerCase() === 'easy').length;
@@ -26,7 +27,7 @@ function ProblemsPage() {
         <div className="space-y-4">
           {problems.map(problem => (
             <Link key ={problem.id}
-            to={`/problem/${problem.id}`}
+            to={`/problems/${problem.id}`}
             className="card bg-base-100 hover:scale-[1.01] transition-transform"
             >
             <div className="card-body">
